@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>I Miss You</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+
+<!-- Floating effects container -->
+<div class="floating-container">
+  <div class="heart"></div>
+  <div class="heart sparkle"></div>
+  <div class="heart sparkle"></div>
+  <div class="heart"></div>
+</div>
+
+<!-- Flower background container -->
+<div class="flower-background">
+  <div class="flower" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="flower" style="left: 25%; animation-delay: 3s;"></div>
+  <div class="flower" style="left: 40%; animation-delay: 1.5s;"></div>
+  <div class="flower" style="left: 55%; animation-delay: 2.7s;"></div>
+  <div class="flower" style="left: 70%; animation-delay: 0.8s;"></div>
+  <div class="flower" style="left: 85%; animation-delay: 1.2s;"></div>
+</div>
+
+<!-- Main content container -->
+<div class="container">
+  <button id="revealBtn">Click Me! 💗</button>
+
+  <div id="message" class="hidden">
+    <div class="message fade-in">To my beautiful cutie baby Strelly💖</div>
+
+    <p class="paragraph">
+       Hi babyy, I miss you so muchh unta makalaag nata soon para ma treat nasad tika hehe.
+        Random kaayo ni nohh pero I just want to show you how much I appreciate you and unta di ka sgeg pangaway bi!
+        Mwaamwaaa goodluck and ingat sa inyong practices and best of luck sa day nga sayaw ninyo kaya kaayo na oi ikaw na gud na!
+        Unta magkita nata soon mingaw najud kayko nimo ayy, 
+        corny kaayo ni nga message noh klaro kaayo nag katawa ka magbasa ani HAHAHAHA since dili man ko dancer kagaya saimong you know whooo
+        so this is my way of showing nga love kaayo tika😉
+        
+        Amping palagi and I miss you so very much! if naa kay gusto ipalabas ipakita lang ayaw kaulaw! keep being the Strel who's bubbly, smiley, good vibes sa tanan and most of all, maldita! but atleast now, akoa nakang maldita hehe, just keep being you because that's the person i fell in love with. -Adam💌
+    </p>
+
+      <img src="cute-cat.gif" alt="Cute GIF" class="gif-image fade-in" />
+  </div>
+</div>
+
+<script>
+  document.getElementById("revealBtn").addEventListener("click", function () {
+    document.getElementById("message").classList.remove("hidden");
+    this.style.display = "none";
+  });
+
+  // Reveal on scroll animation
+  const faders = document.querySelectorAll('.fade-in');
+  const options = {
+    threshold: 0.3,
+    rootMargin: "0px 0px -100px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, options);
+
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+</body>
+</html>
